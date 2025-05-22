@@ -1,0 +1,33 @@
+﻿@page
+@model Bestellingplaatsen.Pages.WinkelwagenModel
+@{
+    ViewData["Title"] = "Winkelwagen";
+}
+
+<h2>Winkelwagen</h2>
+
+<p>Hier zie je de producten die je hebt toegevoegd.</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Product</th>
+            <th>Aantal</th>
+            <th>Prijs</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Schroef M6</td>
+            <td>2</td>
+            <td>€ 0,50</td>
+        </tr>
+    </tbody>
+</table>
+
+<p><strong>Totaal:</strong> € 0,50</p>
+<form method="get" asp-page="/Betaalpagina">
+    <button type="submit" class="btn btn-success">Bestelling plaatsen</button>
+</form>
+
+

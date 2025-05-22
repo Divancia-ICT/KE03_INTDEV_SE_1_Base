@@ -1,0 +1,17 @@
+.homepage-container {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+}
+
+.nav-buttons {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+    .nav-buttons a.btn {
+        padding: 15px 25px;
+        font-size: 1.1rem;
+    }

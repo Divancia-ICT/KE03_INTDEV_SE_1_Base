@@ -1,0 +1,16 @@
+﻿@page
+@model Bestellingplaatsen.Pages.IndexModel
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="homepage-container">
+    <h1>Welkom bij Matrix Onderdelen</h1>
+    <p>Klik op een knop om verder te gaan:</p>
+
+    <div class="nav-buttons">
+        <a class="btn btn-primary" asp-page="/Producten">Bekijk Producten</a>
+        <a class="btn btn-secondary" asp-page="/Winkelwagen">Winkelwagen</a>
+        <a class="btn btn-outline-dark" asp-page="/Bestellingen">Bestelgeschiedenis</a>
+    </div>
+</div>
