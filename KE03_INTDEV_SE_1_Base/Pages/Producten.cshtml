@@ -6,16 +6,38 @@
 
 <h2>Productoverzicht</h2>
 
-<p>Hier kun je beschikbare mechanische onderdelen bekijken en bestellen.</p>
+<p>Hier kun je beschikbare producten bekijken en toevoegen aan je winkelwagen.</p>
 
-<!-- Voorbeeldproduct -->
 <div class="product-lijst">
-    <div class="product-kaart">
-        <h4>Schroef M6</h4>
-        <p>€ 0,25</p>
 
-        <form method="get" asp-page="/Winkelwagen">
-            <button type="submit" class="btn btn-primary">Toevoegen aan winkelwagen</button>
-        </form>
-    </div>
+    <form method="post">
+        <div class="product-kaart">
+            <h4>Nebuchadnezzar</h4>
+            <p>Het schip waarop Neo voor het eerst de echte wereld leert kennen</p>
+            <p>Prijs: € 10.000,00</p>
+            <input type="hidden" name="productId" value="1" />
+            <button class="btn btn-primary" type="submit">Toevoegen aan winkelwagen</button>
+        </div>
+    </form>
+
+    <form method="post">
+        <div class="product-kaart">
+            <h4>Jack-in Chair</h4>
+            <p>Stoel met een rugsteun en metalen armen waarin mensen zitten om ingeplugd te worden in de Matrix via een jack-in poort.</p>
+            <p>Prijs: € 500,50</p>
+            <input type="hidden" name="productId" value="2" />
+            <button class="btn btn-primary" type="submit">Toevoegen aan winkelwagen</button>
+        </div>
+    </form>
+
+    <form method="post">
+        <div class="product-kaart">
+            <h4>EMP (Electro-Magnetic Pulse) Device</h4>
+            <p>Wapentuig op de schepen van Zion</p>
+            <p>Prijs: € 129,99</p>
+            <input type="hidden" name="productId" value="3" />
+            <button class="btn btn-primary" type="submit">Toevoegen aan winkelwagen</button>
+        </div>
+    </form>
+
 </div>
