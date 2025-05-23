@@ -1,4 +1,4 @@
-﻿@page
+﻿@* @page
 @model Bestellingplaatsen.Pages.WinkelwagenModel
 @{
     ViewData["Title"] = "Winkelwagen";
@@ -39,4 +39,102 @@
 
 <form method="get" asp-page="/Betaling">
     <button type="submit" class="btn btn-success">Bestelling plaatsen</button>
-</form>
+</form>  
+@* @*  *@
+
+@* @page
+@model Bestellingplaatsen.Pages.WinkelwagenModel
+@{
+    ViewData["Title"] = "Winkelwagen";
+}
+
+<h2>Winkelwagen</h2>
+
+<p>Hier zie je de producten die je hebt toegevoegd.</p>
+
+@if (!Model.Items.Any())
+{
+    <p>Je winkelwagen is leeg.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Aantal</th>
+                <th>Prijs</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Product.Naam</td>
+                    <td>@item.Aantal</td>
+                    <td>€ @item.Product.Prijs.ToString("F2")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <p><strong>Totaal:</strong> € @Model.TotaalPrijs.ToString("F2")</p>
+
+    <form method="get" asp-page="/Betaling">
+        <button type="submit" class="btn btn-success">Bestelling plaatsen</button>
+    </form>
+} 
+
+
+
+
+
+
+
+*@
+@page
+@model Bestellingplaatsen.Pages.WinkelwagenModel
+@{
+    ViewData["Title"] = "Winkelwagen";
+}
+
+<h1>Winkelwagen</h1>
+
+@if (!Model.Items.Any())
+{
+    <p>Je winkelwagen is leeg.</p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Aantal</th>
+                <th>Prijs per stuk</th>
+                <th>Subtotaal</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Product.Naam</td>
+                    <td>@item.Aantal</td>
+                    <td>@item.Product.Prijs.ToString("C")</td>
+                    <td>@(item.Product.Prijs * item.Aantal) (.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Totaal:</strong></td>
+                <td><strong>@Model.TotaalPrijs.ToString("C")</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <form method="get" asp-page="/Betaling">
+        <button type="submit" class="btn btn-success mt-3">Bestelling plaatsen</button>
+    </form>
+}
