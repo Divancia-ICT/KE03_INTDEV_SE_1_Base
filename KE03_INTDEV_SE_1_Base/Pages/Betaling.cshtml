@@ -1,4 +1,42 @@
 ﻿@page
 @model KE03_INTDEV_SE_1_Base.Pages.BetalingModel
 @{
+    ViewData["Title"] = "Betaling";
 }
+
+<h2>Betaling</h2>
+
+@if (Model.BetalingVerwerkt)
+{
+    <div class="alert alert-success">
+        ✅ Je bestelling is succesvol voltooid! 🎉
+    </div>
+
+    <a asp-page="/Bevestiging" class="btn btn-success mt-3">Ga naar bevestigingspagina</a>
+}
+else
+{
+    <form method="post">
+        <div class="form-group">
+            <label for="naam">Naam op kaart:</label>
+            <input type="text" id="naam" name="Naam" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="kaartnummer">Kaartnummer:</label>
+            <input type="text" id="kaartnummer" name="Kaartnummer" class="form-control" required />
+        </div>
+
+        <div class="form-group">
+            <label for="betaalmethode">Betaalmethode:</label>
+            <select id="betaalmethode" name="Betaalmethode" class="form-control" required>
+                <option value="iDEAL">iDEAL</option>
+                <option value="Creditcard">Creditcard</option>
+                <option value="PayPal">PayPal</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Bevestigen en betalen</button>
+    </form>
+}
+
